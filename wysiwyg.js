@@ -109,24 +109,22 @@ writeToDOM();
 // AND
 // the text input area immediately gains focus so 
 // the user can start editing the selected Person's biography.
-//
-// Because any area of the selected Person's card 
-// results in that Person's element being selected/highlighted
-// the function uses a series of <if> statements to traverse 
-// and identify which Person has been selected and grab 
-// the respective biography
 //******************************************************
 
-// everyone.addEventListener("click", function(e) {
+// this JQuery block replaces the block of code commented out below
 $(".personContainer").click(function (){
 
 	// deselect all previously selected
+
+	// see if can replace w single line of children of <peopleContainer>
 	for (var i=0; i<thisPerson.length; i++) {
 		thisPersonContainer[i].classList.remove("clicked");
 	    thisPersonContainer[i].classList.add("unclicked");
 	} // end <for> loop
 	
 	$(this).addClass("clicked");
+
+	editBio(); // call function for user to edit selected Person's bio
 });
 
   // var redTarget;
@@ -160,9 +158,6 @@ $(".personContainer").click(function (){
   //     thisPersonContainer[i].classList.add("unclicked");
     // } // end <if>
   // } // end <for> loop
-
-// console.log("finding ancestors", $("eachPerson").parentsUntil("personContainer"));
-// console.log("finding children", $("personContainer").find("*"));
 // });
 
 
@@ -176,6 +171,11 @@ function editBio () {
 
   var changeBioChar = document.getElementById("userEditText");
   changeBioChar.focus();
+
+// JQUERY
+// $("#textField").keyup(function() {
+//     $("#output").text($(this).val());
+// });
 
   // writes the selected Person's biography to the user input textbox
   outputBioEdit.value = personBioEdit.innerHTML;
