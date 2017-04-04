@@ -118,23 +118,15 @@ writeToDOM();
 //******************************************************
 
 // everyone.addEventListener("click", function(e) {
-$("#peopleContainer").click(function (){
-
-// The JQuery event.target property returns which DOM element triggered the event.
+$(".personContainer").click(function (){
 
 	// deselect all previously selected
 	for (var i=0; i<thisPerson.length; i++) {
-		if ( $(".personContainer").find("*")) {
-				thisPersonContainer[i].classList.remove("clicked");
-	      		thisPersonContainer[i].classList.add("unclicked");
-// console.log("thisPersonContainer[i] / i :: ", i, thisPersonContainer[i]);
-			} // end <if>
+		thisPersonContainer[i].classList.remove("clicked");
+	    thisPersonContainer[i].classList.add("unclicked");
 	} // end <for> loop
 	
-	// "mark" the selected Person container
-	$(".eachPerson").parentsUntil(".personContainer").addClass("clicked");
-	$(".personContainer").find("*").addClass("clicked");
-
+	$(this).addClass("clicked");
 });
 
   // var redTarget;
