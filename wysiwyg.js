@@ -7,7 +7,7 @@
 // });
 //******************************************************
 
-var onEnterKey = document.getElementById("enterKey");
+// var onEnterKey = document.getElementById("enterKey");
 var everyone = document.getElementById("peopleContainer");
 var thisPersonContainer = document.getElementsByClassName("personContainer");
 var thisPerson = document.getElementsByClassName("eachPerson");
@@ -104,61 +104,28 @@ writeToDOM();
 // Event Listener, when user clicks on a Person element
 // a dotted border dislays around it. 
 // 
-// Function adds the <clicked> class to the selected element
-// which applies the <css><red><dotted> border styling
+// Function 
+// * removes the <clicked> class from all Person elements
+// * adds the <unclicked> class to all Person elements
+// which deselects any previously selected element 
+// and applies the default border styling
+// <css><1px><solid><slategrey>
+//
+// * adds the <clicked> class to the selected element
+// which applies the <css><2px><dotted><red> border styling
+//
 // AND
 // the text input area immediately gains focus so 
 // the user can start editing the selected Person's biography.
 //******************************************************
-
-// this JQuery block replaces the block of code commented out below
 $(".personContainer").click(function (){
 
-	// deselect all previously selected
+  $(this).siblings().removeClass("clicked");
+  $(this).siblings().addClass("unclicked");
 
-	// see if can replace w single line of children of <peopleContainer>
-	for (var i=0; i<thisPerson.length; i++) {
-		thisPersonContainer[i].classList.remove("clicked");
-	    thisPersonContainer[i].classList.add("unclicked");
-	} // end <for> loop
-	
 	$(this).addClass("clicked");
-
 	editBio(); // call function for user to edit selected Person's bio
 });
-
-  // var redTarget;
-  
-  // each <eachPerson> class is a Person container
-  // if <click> is exactly on the <eachPerson> element ... 
-  // if (e.target.classList.contains("eachPerson") === true) {
-  //   e.target.parentNode.classList.add("clicked");
-  //   redTarget = e.target.parentNode;
-  //   personBioEdit = e.target.childNodes[2];
-    
-  // } else if (e.target.parentNode.classList.contains("eachPerson") === true) {
-    // if <click> anywhere in the target area
-    // e.target.parentNode.parentNode.classList.add("clicked");
-    // redTarget = e.target.parentNode.parentNode;
-    // personBioEdit = e.target.parentNode.childNodes[2];
-
-  // } else if (e.target.classList.contains("personContainer") === true) {
-    // if <click> anywhere in the /dead/ area of target area
-    // e.target.classList.add("clicked");
-    // redTarget = e.target;
-    // personBioEdit = e.target.childNodes[0].childNodes[2];
-  // } // end <else if>
-
-  // editBio(); // call function for user to edit selected Person's bio
-
-  // reset any previously clicked item to unclicked status (plain border)
-  // for (var i=0; i<thisPerson.length; i++) {
-  //   if ((thisPersonContainer[i] !== redTarget)) {
-  //     thisPersonContainer[i].classList.remove("clicked");
-  //     thisPersonContainer[i].classList.add("unclicked");
-    // } // end <if>
-  // } // end <for> loop
-// });
 
 
 
@@ -169,26 +136,29 @@ $(".personContainer").click(function (){
 
 function editBio () {
 
-  var changeBioChar = document.getElementById("userEditText");
-  changeBioChar.focus();
+  // var changeBioChar = document.getElementById("userEditText");
+  // changeBioChar.focus();
 
 // JQUERY
 // $("#textField").keyup(function() {
 //     $("#output").text($(this).val());
 // });
+$("#userEditText").keyup(function() {
+    $("thisBio").text($(this).val());
+});
 
   // writes the selected Person's biography to the user input textbox
-  outputBioEdit.value = personBioEdit.innerHTML;
+  // outputBioEdit.value = personBioEdit.innerHTML;
 
-  changeBioChar.addEventListener("keyup", function(e) {
+  // changeBioChar.addEventListener("keyup", function(e) {
     
-    if (e.which === 13) {
-       userTextEditArea.value ="Biography Goes Here...";
+//     if (e.which === 13) {
+//        userTextEditArea.value ="Biography Goes Here...";
 
-     } else { // user is editing the bio content for this person
-      personBioEdit.innerHTML = outputBioEdit.value;
+//      } else { // user is editing the bio content for this person
+//       personBioEdit.innerHTML = outputBioEdit.value;
 
-     } // end <else>   
-  }) // end <changeBioChar.addEventListener>
+//      } // end <else>   
+//   }) // end <changeBioChar.addEventListener>
 } // end <editBio>
 
