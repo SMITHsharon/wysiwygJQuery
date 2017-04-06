@@ -124,60 +124,28 @@ $(".personContainer").click(function (){
   $(this).siblings().addClass("unclicked");
 
 	$(this).addClass("clicked");
+
+  // text input area gains focus
   $("#userEditText").focus();
 
-var goesInEditBox = $(this).children("div.eachPerson").children("div.thisBio").html();
-
-console.log("goesInEditBox ::", goesInEditBox);
-
+  // displays the selected Person's Description in the text input area
   $("#userEditText").text($(this).children("div.eachPerson").children("div.thisBio").html());
+  var thisPersonBioDiv = $(this).children("div.eachPerson").children("div.thisBio");
+   
+  editBio(thisPersonBioDiv);
 
-	// editBio(); // call function for user to edit selected Person's bio
 });
 
 
-
-//******************************************************
-// function handles the Event Listener for editing 
-// the selected Person's bio
-//******************************************************
-
-function editBio () {
-
-  // var changeBioChar = document.getElementById("userEditText");
-  // changeBioChar.focus();
-// var editThisBio = $(this).children(".thisBio").html();
-
-
-// $("#userEditText").html($(this).children(".thisBio"));
-// var editThisBio = $(this).children(".thisBio");
-// console.log("editThisBio :: ", editThisBio);
-// $("#userEditText").html(editThisBio);
-// $("#userEditText").replaceAll($(this).children(".thisBio"));
-
-// JQUERY
-// $("#userEditText").keyup(function() {
-//     $("#output").text($(this).val());
-// });
-$("#userEditText").keyup(function() {
-
-    
-    $("userEditText").text.$(this).val();
-    // $("thisBio").text($(this).html());
-});
-
-  // writes the selected Person's biography to the user input textbox
-  // outputBioEdit.value = personBioEdit.innerHTML;
-
-  // changeBioChar.addEventListener("keyup", function(e) {
-    
-//     if (e.which === 13) {
-//        userTextEditArea.value ="Biography Goes Here...";
-
-//      } else { // user is editing the bio content for this person
-//       personBioEdit.innerHTML = outputBioEdit.value;
-
-//      } // end <else>   
-//   }) // end <changeBioChar.addEventListener>
-} // end <editBio>
-
+function editBio (bioDiv) {
+console.log("bioDiv :: ", bioDiv);
+  // mirrors chars entered in text input area <=> selected Person's Description html area
+  $("#userEditText").keyup(function(event) {
+console.log("event.which :: ", event.which);
+    if ( event.which === 13 ) {
+      $("#userEditText").val("Biography Goes Here...");
+    } else {
+      $(bioDiv).html($(this).val());
+    }
+  });
+}
