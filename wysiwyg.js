@@ -12,7 +12,7 @@ var everyone = document.getElementById("peopleContainer");
 var thisPersonContainer = document.getElementsByClassName("personContainer");
 var thisPerson = document.getElementsByClassName("eachPerson");
 var outputBioEdit = document.getElementById("userEditText");
-var userTextEditArea = document.getElementById("userEditText");
+// var userTextEditArea = document.getElementById("userEditText");
 
 var personBioEdit;
 
@@ -124,7 +124,15 @@ $(".personContainer").click(function (){
   $(this).siblings().addClass("unclicked");
 
 	$(this).addClass("clicked");
-	editBio(); // call function for user to edit selected Person's bio
+  $("#userEditText").focus();
+
+var goesInEditBox = $(this).children("div.eachPerson").children("div.thisBio").html();
+
+console.log("goesInEditBox ::", goesInEditBox);
+
+  $("#userEditText").text($(this).children("div.eachPerson").children("div.thisBio").html());
+
+	// editBio(); // call function for user to edit selected Person's bio
 });
 
 
@@ -138,13 +146,24 @@ function editBio () {
 
   // var changeBioChar = document.getElementById("userEditText");
   // changeBioChar.focus();
+// var editThisBio = $(this).children(".thisBio").html();
+
+
+// $("#userEditText").html($(this).children(".thisBio"));
+// var editThisBio = $(this).children(".thisBio");
+// console.log("editThisBio :: ", editThisBio);
+// $("#userEditText").html(editThisBio);
+// $("#userEditText").replaceAll($(this).children(".thisBio"));
 
 // JQUERY
-// $("#textField").keyup(function() {
+// $("#userEditText").keyup(function() {
 //     $("#output").text($(this).val());
 // });
 $("#userEditText").keyup(function() {
-    $("thisBio").text($(this).val());
+
+    
+    $("userEditText").text.$(this).val();
+    // $("thisBio").text($(this).html());
 });
 
   // writes the selected Person's biography to the user input textbox
