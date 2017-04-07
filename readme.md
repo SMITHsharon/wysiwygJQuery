@@ -1,5 +1,5 @@
 
-# NSS WYSIWYG Exercise, Part 2 :: jQuery Version
+# NSS WYSIWYG Exercise, V2 :: jQuery Version
 
 ### Project Description 
 
@@ -9,17 +9,17 @@ This exercise was first written using only vanilla `javascript`. The purpose of 
 
 
 #### WYSIWYG jQuery on Launcy
-![WYSIWYG jQuery on Launch](...)
+![WYSIWYG jQuery on Launch](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/jQuery%20WYSIWG%20on%20Launch.png)
 
 #### WYSIWYG jQuery :: Adding Text to Selected Bio
-![WYSIWYG jQuery, Add to Selected Bio](...)
+![WYSIWYG jQuery, Add to Selected Bio](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/Adding%20to%20Selected%20Bio.png)
 
 #### WYSIWYG jQuery :: Mirrored Text in Selected Person's Bio
-![WYSIWYG jQuery, Showing Mirrored Text](...)
+![WYSIWYG jQuery, Showing Mirrored Text](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/Mirrored%20Added%20Bio%20Text.png)
 
 
 ### Project Specs
-Reproduced the program functionality using `jQuery`:
+Reproduced the original program functionality (WYSIWYG V1) using `jQuery`:
 - Wrote contents of `<famePeople>` object array to the DOM
 - Wrote the event listeners to handle: 
 	- a click on a Person card
