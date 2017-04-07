@@ -12,7 +12,7 @@ var everyone = document.getElementById("peopleContainer");
 var thisPersonContainer = document.getElementsByClassName("personContainer");
 var thisPerson = document.getElementsByClassName("eachPerson");
 var outputBioEdit = document.getElementById("userEditText");
-// var userTextEditArea = document.getElementById("userEditText");
+var userTextEditArea = document.getElementById("userEditText");
 
 var personBioEdit;
 
@@ -79,26 +79,56 @@ var famePeople = [
 //******************************************************
 // function writes the famePeople array contents to the DOM
 //******************************************************
-function writeToDOM () {
+// function writeToDOM () {
 
-  var personString = "";
+//   var personString = "";
  
-  for (var i=0; i<famePeople.length; i++) {
-    personString += `<div class="personContainer" id="person$(i)">`;
-    personString += `<div class="eachPerson">`;
-    personString += `<header><strong>${famePeople[i].name}</strong><br>`;
-    personString += `${famePeople[i].title}</header>`;
-    personString += `<img class="thisImage" src="${famePeople[i].image}">`;
-    personString += `<div class="thisBio">${famePeople[i].bio}</div>`;
-    personString += `<footer>Born: ${famePeople[i].lifespan.birth}; <em>(still living)</em></footer>`;
-    personString += `</div></div>`;
-  }
-  everyone.innerHTML = personString;
-}
+//   for (var i=0; i<famePeople.length; i++) {
+//     personString += `<div class="personContainer" id="person$(i)">`;
+//     personString += `<div class="eachPerson">`;
+//     personString += `<header><strong>${famePeople[i].name}</strong><br>`;
+//     personString += `${famePeople[i].title}</header>`;
+//     personString += `<img class="thisImage" src="${famePeople[i].image}">`;
+//     personString += `<div class="thisBio">${famePeople[i].bio}</div>`;
+//     personString += `<footer>Born: ${famePeople[i].lifespan.birth}; <em>(still living)</em></footer>`;
+//     personString += `</div></div>`;
+//   }
+//   everyone.innerHTML = personString;
+// }
 
-writeToDOM();
+// writeToDOM();
 
 
+$.each (famePeople, function (index,value) {
+  console.log(value);
+    index += 1;
+    $("#peopleContainer").append(`<div class="eachPerson">`);
+    // $(".personContainer:nth-of-type(" + index + ")").append(`<person class="eachPerson">`);
+    $(".eachPerson:nth-of-type(" + index + ")").append(`<header><h2>${value.title} ${value.name}<h2></header>`);
+    $(".eachPerson:nth-of-type(" + index + ")").append(`<section><span>${value.bio}</span><br><img src=${value.image} class="thisImage"></section>`);
+    $(".eachPerson:nth-of-type(" + index + ")").append(`<footer><h3>Born: ${value.lifespan.birth}<br>Died: ${value.lifespan.death}</h3></footer>`);
+});
+
+// $("person").addClass("person__container");
+
+// function editBio(){
+//     var clickedCard = $(".clicked").find("span").text();
+//     $("#user-input-field").val(clickedCard);
+// }                    
+
+// function copyText(event) {
+//     if (event.keyCode !== 13) {
+//         $(".clicked").find("span").text($("#user-input-field").val());
+//     }
+//     else {
+//         $("#user-input-field").blur();
+//         $("#user-input-field").val("");
+//          $(".clicked").removeClass("clicked");
+//     }
+// }
+// $("#user-input-field").keyup(function(event) {
+//     copyText(event);
+// });
 
 //******************************************************
 // Event Listener, when user clicks on a Person element
@@ -118,6 +148,7 @@ writeToDOM();
 // the text input area immediately gains focus so 
 // the user can start editing the selected Person's biography.
 //******************************************************
+var thisPersonBioDiv;
 $(".personContainer").click(function (){
 
   $(this).siblings().removeClass("clicked");
@@ -130,7 +161,7 @@ $(".personContainer").click(function (){
 
   // displays the selected Person's Description in the text input area
   $("#userEditText").text($(this).children("div.eachPerson").children("div.thisBio").html());
-  var thisPersonBioDiv = $(this).children("div.eachPerson").children("div.thisBio");
+  thisPersonBioDiv = $(this).children("div.eachPerson").children("div.thisBio");
    
   editBio(thisPersonBioDiv);
 
@@ -138,12 +169,14 @@ $(".personContainer").click(function (){
 
 
 function editBio (bioDiv) {
-console.log("bioDiv :: ", bioDiv);
+// console.log("bioDiv :: ", bioDiv);
   // mirrors chars entered in text input area <=> selected Person's Description html area
   $("#userEditText").keyup(function(event) {
-console.log("event.which :: ", event.which);
+// console.log("event.which :: ", event.which);
     if ( event.which === 13 ) {
-      $("#userEditText").val("Biography Goes Here...");
+      $("#userEditText").val("");
+      $("#userEditText").attr("placeholder","Biography Goes Here...");
+
     } else {
       $(bioDiv).html($(this).val());
     }
