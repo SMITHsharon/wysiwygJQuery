@@ -20,8 +20,8 @@ This exercise was first written using only vanilla `javascript`; that version ca
 
 ### Project Specs
 Reproduced the original program functionality (WYSIWYG V1) using `jQuery`:
-- Wrote contents of `<famePeople>` object array to the DOM
-- Wrote the event listeners to handle: 
+- Writes contents of `<famePeople>` object array to the DOM
+- Writes the event listeners to handle: 
 	- a click on a Person card
 	- editing a selected Person's biography information
 
@@ -38,7 +38,6 @@ Reproduced the original program functionality (WYSIWYG V1) using `jQuery`:
 ```
 git clone https://github.com/SMITHsharon/wysiwygJQuery.git
 cd wysiwygJQuery
-npm install http-server -g
 http-server -p 8080
 ```
 
