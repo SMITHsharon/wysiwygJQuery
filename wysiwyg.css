@@ -1,0 +1,75 @@
+
+body {
+	background-color: SeaShell;
+	font-family: 'Harmattan', sans-serif;
+	font-size: 1.2em;
+}
+
+#pageHead {
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+h1 {
+	font-size: 3em;
+	margin-bottom: 0;
+}
+
+
+/******************************************/
+/* defines the flex layout structure
+/******************************************/
+
+#peopleContainer {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+}
+
+.eachPerson {
+	width: 20%;
+	border: 1px solid slategrey;
+	margin-top: 50px;
+	margin-left: 25px;
+	padding: 2% 2%;
+}
+
+
+
+/******************************************/
+/* image styling
+/******************************************/
+.thisImage {
+	height: 40%;
+	width: 40%;
+	border: 2px solid; slategrey;
+	border-radius: 50%;
+	margin-left: 30px;
+}
+
+
+
+/******************************************/
+/* Even numbered elements have a light yellow background. 
+/* Odd numbered elements have a light blue background. 
+/*
+/* When the user clicks on a Person element, 
+/* a dotted border displays around it.
+/******************************************/
+
+.eachPerson:nth-child(2n) {
+	background-color: lightyellow;
+}
+
+.eachPerson:nth-child(2n+1) {
+	background-color: lightcyan;
+}
+
+.clicked {
+	border: 2px dotted red;
+}
+
+.unclicked { // reset after <click> focus changes
+	border: 1px solid slategrey;
+}
+
