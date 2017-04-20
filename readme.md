@@ -5,7 +5,7 @@
 
 Five famous people, [Barack Obama, Daenerys Targaryen, Meryl Streep, Kate McKinnon, Bernie Sanders], are hard-coded into an Object Array along with required attributes: `title`, `name`, `bio`, `lifespan`, as well as an image to be displayed. The contents of the array are written dynamically to the DOM using `jQuery`. If a viewer/user clicks on the *card* for one of these Famous People, the card border displays in `dotted red`, and the user has opportunity to edit the Person's biography. 
 
-This exercise was first written using only vanilla `javascript`; that version can be seen [here](https://github.com/SMITHsharon/wysiwyg) The purpose of this assignment was to reproduce its functionality using `jQuery` after a fast summary overview of JQuery syntax and capabilities. 
+This exercise was first written using only vanilla `JavaScript`; that version can be seen [here](https://github.com/SMITHsharon/wysiwyg) The purpose of this assignment was to reproduce its functionality using `jQuery` after a fast summary overview of JQuery syntax and capabilities. 
 
 
 #### WYSIWYG jQuery on Launch
@@ -39,9 +39,8 @@ Reproduced the original program functionality (WYSIWYG V1) using `jQuery`:
 git clone https://github.com/SMITHsharon/wysiwygJQuery.git
 cd wysiwygJQuery
 http-server -p 8080
+This will show in your browser at: http://localhost:8080
 ```
-
-This will show in your browser at: `http://localhost:8080`
 
 
 ### Contributor
