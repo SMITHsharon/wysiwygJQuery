@@ -42,6 +42,9 @@ http-server -p 8080
 This will show in your browser at: http://localhost:8080
 ```
 
+### To Run The Deployed App
+`https://smithsharon.github.io/wysiwygJQuery/`
+
 
 ### Contributor
 [Sharon Smith](https://github.com/SMITHsharon)
