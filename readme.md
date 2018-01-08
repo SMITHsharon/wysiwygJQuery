@@ -12,10 +12,7 @@ This exercise was first written using only vanilla `JavaScript`; that version ca
 ![WYSIWYG jQuery on Launch](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/jQuery%20WYSIWG%20on%20Launch.png)
 
 #### WYSIWYG jQuery :: Adding Text to Selected Bio
-![WYSIWYG jQuery, Add to Selected Bio](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/Adding%20to%20Selected%20Bio.png)
-
-#### WYSIWYG jQuery :: Mirrored Text in Selected Person's Bio
-![WYSIWYG jQuery, Showing Mirrored Text](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/Mirrored%20Added%20Bio%20Text.png)
+![WYSIWYG jQuery, Text Added to Selected Bio and Mirrored](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/Adding%20to%20Selected%20Bio.png)
 
 
 ### Project Specs
