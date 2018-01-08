@@ -11,7 +11,7 @@ This exercise was first written using only vanilla `JavaScript`; that version ca
 #### WYSIWYG jQuery on Launch
 ![WYSIWYG jQuery on Launch](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/jQuery%20WYSIWG%20on%20Launch.png)
 
-#### WYSIWYG jQuery :: Adding Text to Selected Bio
+#### WYSIWYG jQuery :: Text Added Text to Selected Bio and Mirrored
 ![WYSIWYG jQuery, Text Added to Selected Bio and Mirrored](https://raw.githubusercontent.com/SMITHsharon/wysiwygJQuery/screens/screens/Adding%20to%20Selected%20Bio.png)
 
 
